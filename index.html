@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="FocusList is a simple, fast to-do app. Add tasks, set priorities, search, filter and track your progress. Everything stays in your browser."
+    />
+    <meta name="theme-color" content="#eef1f7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d1120" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>FocusList — simple daily tasks</title>
+    <!-- Apply the saved / system theme before first paint to avoid a flash. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('focuslist:theme');
+          var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.theme = saved || (dark ? 'dark' : 'light');
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+/* Design tokens. Every colour used by the app comes from here, in both themes. */
+:root {
+  color-scheme: light;
+
+  --font-display: 'Bricolage Grotesque Variable', 'Trebuchet MS', system-ui, sans-serif;
+  --font-body: 'Instrument Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Surfaces and text */
+  --bg: #eef1f7;
+  --surface: #ffffff;
+  --surface-2: #f4f6fb;
+  --ink: #111a33;
+  --ink-2: #4a5470;
+  --ink-3: #5d6781;
+  --line: #dde2ee;
+  --control-border: #7a85a3;
+
+  /* Accent */
+  --accent: #2f45e0;
+  --accent-hover: #2436c2;
+  --accent-ink: #ffffff;
+  --accent-soft: #e6e9fd;
+  --accent-text: #2337c4;
+  --focus: #2f45e0;
+
+  /* Priority tones: `tone` for bars/icons, `soft` for fills, `ink` for text on fills */
+  --high: #c62f4a;
+  --high-soft: #fde8ec;
+  --high-ink: #a3213a;
+  --medium: #c07600;
+  --medium-soft: #fff0d1;
+  --medium-ink: #7a4a00;
+  --low: #23785a;
+  --low-soft: #dff3ea;
+  --low-ink: #17573f;
+
+  --mark: #ffe9a3;
+
+  --toast-bg: #111a33;
+  --toast-ink: #f4f6fb;
+  --toast-action: #b9c3ff;
+
+  --shadow-sm: 0 1px 2px rgb(17 26 51 / 0.05);
+  --shadow-md: 0 1px 2px rgb(17 26 51 / 0.05), 0 12px 28px -14px rgb(17 26 51 / 0.22);
+  --shadow-toast: 0 12px 32px -8px rgb(17 26 51 / 0.45);
+
+  --radius-panel: 22px;
+  --radius-control: 14px;
+  --radius-inner: 10px;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0d1120;
+  --surface: #161c30;
+  --surface-2: #1c2340;
+  --ink: #e9ecf8;
+  --ink-2: #a5aecb;
+  --ink-3: #8791b0;
+  --line: #29325a;
+  --control-border: #6b7594;
+
+  --accent: #7b8cff;
+  --accent-hover: #93a1ff;
+  --accent-ink: #0b1020;
+  --accent-soft: #232b5c;
+  --accent-text: #a3afff;
+  --focus: #a3afff;
+
+  --high: #ff8095;
+  --high-soft: #3b1a26;
+  --high-ink: #ffa3b1;
+  --medium: #f0b04a;
+  --medium-soft: #3a2c12;
+  --medium-ink: #f6c877;
+  --low: #4fd0a0;
+  --low-soft: #12352b;
+  --low-ink: #7be3bb;
+
+  --mark: #6b5514;
+
+  --toast-bg: #e9ecf8;
+  --toast-ink: #111a33;
+  --toast-action: #2337c4;
+
+  --shadow-sm: none;
+  --shadow-md: 0 0 0 1px rgb(255 255 255 / 0.03), 0 16px 32px -16px rgb(0 0 0 / 0.6);
+  --shadow-toast: 0 12px 32px -8px rgb(0 0 0 / 0.7);
+}
+
+/* Priority tone scopes: any element with data-tone gets --tone / --tone-soft / --tone-ink. */
+[data-tone='high'] {
+  --tone: var(--high);
+  --tone-soft: var(--high-soft);
+  --tone-ink: var(--high-ink);
+}
+[data-tone='medium'] {
+  --tone: var(--medium);
+  --tone-soft: var(--medium-soft);
+  --tone-ink: var(--medium-ink);
+}
+[data-tone='low'] {
+  --tone: var(--low);
+  --tone-soft: var(--low-soft);
+  --tone-ink: var(--low-ink);
+}

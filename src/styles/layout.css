@@ -1,0 +1,98 @@
+.app {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding: 0 clamp(16px, 4vw, 32px) 120px;
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0 22px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand__name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.header__side {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header__date {
+  display: none;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+@media (min-width: 520px) {
+  .header__date {
+    display: block;
+  }
+}
+
+/* ---------- Page grid ---------- */
+/* Mobile: a single column, progress first. Desktop: content left, sticky progress right. */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'stats'
+    'compose'
+    'controls'
+    'list';
+  gap: 20px;
+}
+
+.stats {
+  grid-area: stats;
+}
+.compose {
+  grid-area: compose;
+}
+.toolbar {
+  grid-area: controls;
+}
+.list {
+  grid-area: list;
+}
+
+@media (min-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    grid-template-areas:
+      'compose stats'
+      'controls stats'
+      'list stats';
+    column-gap: 32px;
+    row-gap: 24px;
+    align-items: start;
+  }
+
+  .stats {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  margin-top: 40px;
+  color: var(--ink-3);
+  font-size: 0.875rem;
+  text-align: center;
+}
